@@ -5,6 +5,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# XDG_CONFIG_HOME 
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -123,3 +126,27 @@ source $ZSH/oh-my-zsh.sh
 
 # add homebrew's path 
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+#alias 
+alias gd="git diff"
+alias gs="git status"
+
+alias ga="git ad"
+alias gc="git commit"
+
+alias gp="git push"
+alias gu="git pull"
+
+alias gl="git log"
+alias gb="git branch"
+
+alias gi="git init"
+alias gcl="git clone"
+
+alias v="nvim"
+alias c="clear"
+alias e="exit"
+
+export EDITOR=/opt/homebrew/bin/nvim
+
+alias tmux="tmux -f ~/.config/tmux/.tmux.conf"
