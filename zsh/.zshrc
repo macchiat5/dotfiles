@@ -121,6 +121,18 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+#
+autoload -Uz add-zsh-hook
+
+tmux_update_cwd() {
+  if [[ -n "$TMUX" ]] then 
+    tmux setenv -g TMUX_PWD "$PWD"
+  fi
+}
+
+add-zsh-hook chpwd tmux_update_cwd
+
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -149,4 +161,4 @@ alias e="exit"
 
 export EDITOR=/opt/homebrew/bin/nvim
 
-alias tmux="tmux -f ~/.config/tmux/.tmux.conf"
+alias tmux="tmux -f ~/.config/tmux/tmux.conf"
