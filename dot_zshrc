@@ -75,3 +75,6 @@ export GSK_RENDERER=cairo
 
 # Starship 프롬프트 (항상 마지막에)
 eval "$(starship init zsh)"
+
+# dotfiles managements for chezmoi
+alias dots='cd ~/.local/share/chezmoi && git add . && git commit -m "Update dotfiles" && git push'
