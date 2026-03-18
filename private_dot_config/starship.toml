@@ -1,0 +1,65 @@
+# 전체 포맷
+format = """
+$directory$git_branch$git_status$python$nodejs$rust$golang$cmd_duration
+$character"""
+
+# 디렉토리
+[directory]
+style = "bold cyan"
+truncation_length = 3
+truncate_to_repo = true
+
+# git 브랜치
+[git_branch]
+format = " [$symbol$branch]($style) "
+symbol = " "
+style = "bold purple"
+
+# git 상태
+[git_status]
+format = '([$all_status$ahead_behind]($style) )'
+style = "bold yellow"
+conflicted = "⚔️ "
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "?${count}"
+stashed = " "
+modified = "!${count}"
+staged = "+${count}"
+deleted = "✘${count}"
+
+# 실행 시간 (2초 이상일 때만 표시)
+[cmd_duration]
+min_time = 2000
+format = " [ $duration]($style)"
+style = "bold yellow"
+
+# Python
+[python]
+format = ' [${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)'
+symbol = " "
+style = "bold green"
+
+# Node.js
+[nodejs]
+format = " [$symbol($version)]($style)"
+symbol = " "
+style = "bold green"
+
+# Rust
+[rust]
+format = " [$symbol($version)]($style)"
+symbol = " "
+style = "bold orange"
+
+# Go
+[golang]
+format = " [$symbol($version)]($style)"
+symbol = " "
+style = "bold cyan"
+
+# 프롬프트 문자
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
